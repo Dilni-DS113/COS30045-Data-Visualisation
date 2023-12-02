@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="Data Visualisation Exercise 1"/>
+        <meta name="keywords" content="HTML, CSS"/>
+        <meta name="author" content="Your name here"/>
+        <title>Task 2.2 D3 Drawing with Data - Bar chart</title>
+        <script src = "https://d3js.org/d3.v6.min.js"></script> 
+    </head>
+    <body>
+        <h1> Drawing with Data</h1>
+        <script>
+            var w = 500; // width of SVG space 
+            var h = 100; // height of SVG space
+            var scale  = 4;  //scale to make sure graph uses all svg space
+            var bar_padding = 1;   // space in between bars
+            var dataset = [14,5,26,23,9,15,27];
+            var svg = d3.select("body").append("svg").attr("width", w).attr("height",h); 
+
+            svg.selectAll("rect").data(dataset).enter().append("rect")
+                // used to change postioning of the rect / each bar
+            .attr("x",function(d, i){
+                return i * (w/ dataset.length);  // Using the index of the dataset to get the position of each data point linking to a bar
+
+            }).attr("y",function(d){
+                return (h - (d * scale)); // To prevent top to bottom growth - the height from each data point hence inversing bar growth
+                                         // * scale : scales each bar (scale uses all 100px svg space )
+            }) 
+                // Used to change the actual width and height of the rect / bar
+            .attr("width",(w/ dataset.length ) - bar_padding) // width: length of data set , - bar_padding: for space between bars 
+
+            .attr("height",function(d){ 
+                return d  * scale; // Function returns the height as each data point , scale uses all 100px svg space 
+            }).style('fill',"rgb(110, 162, 245)") // adds colour to graph
+        </script>
+    <br>
+    <bf>
+            <footer style="color: grey;">COS3005 Data Visualisation
+                <br>Dilni De Silva</footer>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+h1{
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    color: rgb(154, 169, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100;
+}
+ol{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+figcaption{
+    font-style: italic;
+    position:static
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+footer{
+    font-style: italic;
+    font-size: x-small;
+    background-color: rgb(193, 204, 255);
+}
+#vs{
+    background-color: #4c53af;
+    border: #4c53af;
+    color: white;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+#one{
+    background-color: #4c53af;
+    border: #4c53af;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+#two{
+    background-color: #4c53af;
+    border: #4c53af;
+    color: white;
+    margin-top:10px;
+    padding: 10px 12px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}

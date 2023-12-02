@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="Data Visualisation Exercise 1"/>
+        <meta name="keywords" content="HTML, CSS"/>
+        <meta name="author" content="Your name here"/>
+        <title>Task 2.1 D3 Data Binding</title>
+        <script src = "https://d3js.org/d3.v6.min.js"></script> 
+    </head>
+    <body>
+        <h1> The D3 Journey Starts here...</h1>
+        <script>
+            var dataset = [14,5,26,23,9] // data set 
+            d3.select("body").selectAll("p").data(dataset).enter()
+            .append("p").style('fill', 'red','black').style("color", function(d, i){
+                // This if else statement changes colour of text if data value is more than 10
+              if(d > 10){
+                return "red"; // if data value more than 10 
+              }
+              else{
+                return "black"; // if data value less than 10
+              }
+            })
+            .text(function(d, i) {
+                // In addition when data vlaue is more than 10 a warning message appears
+                if(d > 10)
+                {
+                    return "warning: Joe watched " + d + "cat videos Today " // this text comes with a printing of a # in array
+                }
+                else {
+                    return "Joe Watched " + d + "cat videos Today "
+                }
+                ;
+               //console.log(d3.selectAll("p")); 
+            });
+        </script>
+        <br>
+        <bf>
+            <footer style="color: grey;">COS3005 Data Visualisation
+                <br>Dilni De Silva</footer>
+    </body>
+</html>
